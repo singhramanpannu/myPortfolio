@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -29,9 +32,26 @@
     </nav>
 
     <!-- Projects Content -->
-    <div class="container mt-5">
+    <div class="parent-container">
         <h1>My Projects</h1>
         <p>Details about my projects and contributions.</p>
+
+        <div class="content-container">
+            <!-- Left Div (Project Briefs) -->
+            <div class="left-div">
+                <h3>Project Briefs</h3>
+                <p>Project 1: A brief description of what this project is about.</p>
+                <p>Project 2: A brief description of what this project is about.</p>
+                <p>Project 3: A brief description of what this project is about.</p>
+                <!-- Add more project briefs as needed -->
+            </div>
+
+            <!-- Right Div (Project Image) -->
+            <div class="right-div">
+                <img src="your-project-image.jpg" alt="Project Image" class="project-image"> <!-- Replace with your image URL -->
+                <div class="project-title">Project Title</div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
