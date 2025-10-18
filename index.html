@@ -26,6 +26,13 @@
       content="#0f172a"
     />
 
+    <!-- Runtime-updated theme-color (fallback to ensure address bar matches user toggle) -->
+    <meta
+      id="theme-color-runtime"
+      name="theme-color"
+      content="#ffffff"
+    />
+
     <!-- 1) Apply saved/system theme ASAP to avoid flash -->
     <script>
       (function () {
@@ -34,11 +41,18 @@
           var prefersDark = window.matchMedia(
             '(prefers-color-scheme: dark)'
           ).matches;
-          if (theme === 'dark' || (!theme && prefersDark)) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
+          var isDark = theme === 'dark' || (!theme && prefersDark);
+          if (isDark) document.documentElement.classList.add('dark');
+          else document.documentElement.classList.remove('dark');
+          // Also set a data-theme attribute for CSS-only fallback
+          document.documentElement.setAttribute(
+            'data-theme',
+            isDark ? 'dark' : 'light'
+          );
+          // Update runtime theme-color meta quickly
+          var meta = document.getElementById('theme-color-runtime');
+          if (meta)
+            meta.setAttribute('content', isDark ? '#0f172a' : '#ffffff');
         } catch (e) {}
       })();
     </script>
@@ -60,6 +74,37 @@
     <style>
       :root {
         color-scheme: light dark;
+      }
+      /* Global theming fallback using data-theme on <html> */
+      html[data-theme='light'] body {
+        background-color: #ffffff;
+        color: #0f172a; /* slate-900 */
+      }
+      html[data-theme='dark'] body {
+        background-color: #0f172a; /* slate-900 */
+        color: #e2e8f0; /* slate-100/200 */
+      }
+      /* Borders and surfaces for key containers (fallback) */
+      html[data-theme='light'] .surface,
+      html[data-theme='light'] .card,
+      html[data-theme='light'] header,
+      html[data-theme='light'] .panel {
+        background-color: #f8fafc; /* slate-50 */
+        border-color: rgba(203, 213, 225, 1); /* slate-200 */
+      }
+      html[data-theme='dark'] .surface,
+      html[data-theme='dark'] .card,
+      html[data-theme='dark'] header,
+      html[data-theme='dark'] .panel {
+        background-color: rgba(30, 41, 59, 0.5); /* slate-800/50 */
+        border-color: rgba(51, 65, 85, 1); /* slate-700 */
+      }
+      /* Selection fallback */
+      html[data-theme='light'] ::selection {
+        background: rgba(99, 102, 241, 0.25);
+      }
+      html[data-theme='dark'] ::selection {
+        background: rgba(67, 56, 202, 0.35);
       }
       /* smoother theme transition */
       .theme-transition {
@@ -633,6 +678,13 @@
 
         const applyTheme = (dark, persist = false) => {
           document.documentElement.classList.toggle('dark', dark);
+          // Global, Tailwind-independent theming hooks
+          document.documentElement.setAttribute(
+            'data-theme',
+            dark ? 'dark' : 'light'
+          );
+          const meta = document.getElementById('theme-color-runtime');
+          if (meta) meta.setAttribute('content', dark ? '#0f172a' : '#ffffff');
           if (persist) {
             try {
               localStorage.setItem('theme', dark ? 'dark' : 'light');
