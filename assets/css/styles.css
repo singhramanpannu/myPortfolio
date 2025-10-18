@@ -1,29 +1,82 @@
-/* in styles.css */
-:root { color-scheme: light dark; }
+/* Global theme tokens and component styles (Tailwind-independent) */
+:root {
+  color-scheme: light dark;
+  /* Light theme tokens */
+  --color-bg: #ffffff;
+  --color-text: #0f172a; /* slate-900 */
+  --color-muted: #64748b; /* slate-500 */
+  --color-border: #e2e8f0; /* slate-200 */
+  --color-surface: #f8fafc; /* slate-50 */
+  --color-card: #f1f5f9; /* slate-100 */
+  --color-hover: rgba(15, 23, 42, 0.04);
+  --color-active: rgba(15, 23, 42, 0.06);
+  --color-selection: rgba(99, 102, 241, 0.25); /* indigo 500 alpha */
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.06), 0 1px 1px rgba(15,23,42,0.04);
+  --shadow-md: 0 8px 24px rgba(2,6,23,0.08);
+  --bg-gradient: radial-gradient(1200px 800px at 20% -10%, rgba(99,102,241,0.06), transparent),
+                  radial-gradient(800px 500px at 120% 10%, rgba(14,165,233,0.07), transparent);
+}
 
-/* theme transition helper already in your project; add reduced-motion handling */
+html[data-theme='dark'] {
+  /* Dark theme tokens */
+  --color-bg: #0f172a; /* slate-900 */
+  --color-text: #e2e8f0; /* slate-200 */
+  --color-muted: #94a3b8; /* slate-400 */
+  --color-border: #334155; /* slate-700 */
+  --color-surface: rgba(30,41,59,0.5); /* slate-800/50 */
+  --color-card: rgba(30,41,59,0.65);
+  --color-hover: rgba(148, 163, 184, 0.08);
+  --color-active: rgba(148, 163, 184, 0.12);
+  --color-selection: rgba(67, 56, 202, 0.35); /* indigo 700 alpha */
+  --shadow-sm: 0 1px 2px rgba(2,6,23,0.4), 0 1px 1px rgba(2,6,23,0.3);
+  --shadow-md: 0 12px 32px rgba(2,6,23,0.4);
+  --bg-gradient: radial-gradient(1100px 700px at 20% -10%, rgba(99,102,241,0.12), transparent),
+                  radial-gradient(700px 450px at 120% 10%, rgba(14,165,233,0.10), transparent);
+}
+
+/* Base */
+html, body { background: var(--color-bg); color: var(--color-text); }
+body { background-image: var(--bg-gradient); background-attachment: fixed; }
+::selection { background: var(--color-selection); }
+
+/* Smooth theme transitions */
 .theme-transition {
   transition: background-color .24s cubic-bezier(.2,.9,.2,1), color .18s linear, border-color .18s linear;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .theme-transition { transition: none !important; }
   * { scroll-behavior: auto !important; }
 }
 
-/* focus-visible (good visible focus states) - you can also use Tailwind focus-visible */
-:where(button, a) :focus {
-  outline: none;
-}
+/* Focus styles */
+:where(button, a):focus { outline: none; }
 :where(button, a):focus-visible {
-  outline: 3px solid rgba(99,102,241,0.18);
-  outline-offset: 2px;
-  border-radius: 8px;
+  outline: 3px solid rgba(99,102,241,0.25);
+  outline-offset: 2px; border-radius: 8px;
 }
 
+/* Header */
+header { background-color: rgba(255,255,255,0.7); border-bottom: 1px solid var(--color-border); }
+html[data-theme='dark'] header { background-color: rgba(15,23,42,0.7); }
+
+/* Components */
+.surface { background-color: var(--color-surface) !important; border-color: var(--color-border) !important; box-shadow: var(--shadow-sm); }
+.card { background-color: var(--color-card) !important; border-color: var(--color-border) !important; box-shadow: var(--shadow-sm); }
+.panel { backdrop-filter: saturate(120%) blur(8px); }
+
+.nav-link, .btn {
+  border-color: var(--color-border) !important;
+}
+.nav-link:hover, .btn:hover { background-color: var(--color-hover) !important; }
+.nav-link.is-active { background-color: var(--color-active) !important; }
+
+.muted { color: var(--color-muted) !important; }
+
 /* Slight lift on interactive cards */
-article:hover {
+article.card:hover {
   transform: translateY(-4px);
   transition: transform 180ms ease;
 }
