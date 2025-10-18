@@ -1,3 +1,29 @@
+/* in styles.css */
 :root { color-scheme: light dark; }
-.theme-transition { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
-a, button { -webkit-tap-highlight-color: transparent; }
+
+/* theme transition helper already in your project; add reduced-motion handling */
+.theme-transition {
+  transition: background-color .24s cubic-bezier(.2,.9,.2,1), color .18s linear, border-color .18s linear;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition { transition: none !important; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* focus-visible (good visible focus states) - you can also use Tailwind focus-visible */
+:where(button, a) :focus {
+  outline: none;
+}
+:where(button, a):focus-visible {
+  outline: 3px solid rgba(99,102,241,0.18);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Slight lift on interactive cards */
+article:hover {
+  transform: translateY(-4px);
+  transition: transform 180ms ease;
+}
