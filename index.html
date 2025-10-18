@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="scroll-smooth"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Ramanpreet Singh • Portfolio</title>
+    <meta
+      name="description"
+      content="Mobile-first portfolio of a Full‑Stack Engineer (AEM, React, JS/TS, Java, HTML, CSS, Groovy, Automation)."
+    />
+    <!-- Theme color for mobile address bar (light/dark) -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0f172a"
+    />
+
+    <!-- 1) Apply saved/system theme ASAP to avoid flash -->
+    <script src="./assets/js/theme-init.js"></script>
+
+    <!-- 2) Tailwind CDN config (use class-based dark mode) -->
+    <script src="./assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="./assets/css/styles.css"
+    />
+  </head>
+  <body
+    class="theme-transition bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-dvh selection:bg-indigo-200 dark:selection:bg-indigo-700/50"
+  >
+    <a
+      href="#about"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-yellow-300 dark:focus:bg-yellow-500 text-black px-3 py-2 rounded"
+      >Skip to content</a
+    >
+    <!-- Header / Nav -->
+    <header
+      class="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70 border-b border-slate-200/80 dark:border-slate-700/80"
+    >
+      <div
+        class="mx-auto max-w-screen-md px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="#about"
+          class="font-semibold tracking-tight text-base"
+          >Ramanpreet Singh</a
+        >
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-2">
+          <div
+            class="relative"
+            id="projects-dropdown"
+          >
+            <button
+              id="projects-trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1"
+            >
+              Projects
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div
+              id="projects-menu"
+              class="hidden absolute left-0 mt-2 w-[min(92vw,26rem)] rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-xl p-3"
+            >
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <li>
+                  <a
+                    href="#proj-1"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-slate-200 dark:bg-slate-700"
+                    ></div>
+                    <div>
+                      <div class="text-sm font-medium">Case Study A</div>
+                      <div class="text-xs text-slate-500">UX/UI</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#proj-2"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-emerald-200 dark:bg-emerald-900/40"
+                    ></div>
+                    <div>
+                      <div class="text-sm font-medium">Case Study B</div>
+                      <div class="text-xs text-slate-500">UX/UI</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#proj-3"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-rose-200 dark:bg-rose-900/40"
+                    ></div>
+                    <div>
+                      <div class="text-sm font-medium">Brand/Visual</div>
+                      <div class="text-xs text-slate-500">Visual</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#proj-4"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-purple-200 dark:bg-purple-900/40"
+                    ></div>
+                    <div>
+                      <div class="text-sm font-medium">Various Works</div>
+                      <div class="text-xs text-slate-500">Brand/Visual</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a
+            href="#about"
+            data-nav="about"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >About</a
+          >
+          <a
+            href="#skills"
+            data-nav="skills"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            data-nav="contact"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Let's Talk ↗</a
+          >
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="ml-1 p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span
+              id="icon-sun"
+              class="hidden"
+              aria-hidden="true"
+              >☀️</span
+            >
+            <span
+              id="icon-moon"
+              aria-hidden="true"
+              >🌙</span
+            >
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </nav>
+        <!-- Mobile toggles -->
+        <div class="md:hidden flex items-center gap-2">
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span
+              id="icon-sun"
+              class="hidden"
+              aria-hidden="true"
+              >☀️</span
+            >
+            <span
+              id="icon-moon"
+              aria-hidden="true"
+              >🌙</span
+            >
+            <span class="sr-only">Toggle theme</span>
+          </button>
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            class="p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="sr-only">Open menu</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu panel -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
+      >
+        <div class="px-4 py-3 space-y-2">
+          <details
+            id="mobile-projects"
+            class="group"
+          >
+            <summary
+              class="cursor-pointer px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium flex items-center justify-between"
+            >
+              <span>Projects</span>
+              <span
+                aria-hidden="true"
+                class="transition-transform group-open:rotate-180"
+                >▾</span
+              >
+            </summary>
+            <div class="mt-2 grid grid-cols-1 gap-2">
+              <a
+                href="#proj-1"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-slate-200 dark:bg-slate-700"
+                ></div>
+                <div>
+                  <div class="text-sm font-medium">Case Study A</div>
+                  <div class="text-xs text-slate-500">UX/UI</div>
+                </div>
+              </a>
+              <a
+                href="#proj-2"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-emerald-200 dark:bg-emerald-900/40"
+                ></div>
+                <div>
+                  <div class="text-sm font-medium">Case Study B</div>
+                  <div class="text-xs text-slate-500">UX/UI</div>
+                </div>
+              </a>
+              <a
+                href="#proj-3"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-rose-200 dark:bg-rose-900/40"
+                ></div>
+                <div>
+                  <div class="text-sm font-medium">Brand/Visual</div>
+                  <div class="text-xs text-slate-500">Visual</div>
+                </div>
+              </a>
+            </div>
+          </details>
+          <a
+            href="#about"
+            data-nav="about"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >About</a
+          >
+          <a
+            href="#skills"
+            data-nav="skills"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            data-nav="contact"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >Let's Talk ↗</a
+          >
+          <button
+            id="mobile-menu-close"
+            type="button"
+            class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="mx-auto max-w-screen-lg px-4 pb-16 pt-6">
+      <!-- Hero / Intro -->
+      <section
+        id="about"
+        class="theme-transition rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 md:p-8"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start"
+        >
+          <figure class="md:col-span-5 order-2 md:order-1">
+            <div
+              class="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-200 dark:bg-slate-700"
+            >
+              <!-- Replace with your photo -->
+              <img
+                src="./assets/images/portrait-placeholder.jpg"
+                alt="Ramanpreet Singh portrait"
+                class="h-full w-full object-cover"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <figcaption class="mt-2 text-[11px] text-slate-500">
+              Photo placeholder — replace with your image
+            </figcaption>
+          </figure>
+
+          <div class="md:col-span-7 space-y-4 order-1 md:order-2">
+            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              About Me
+            </h1>
+            <div
+              class="prose prose-slate dark:prose-invert max-w-none text-[15px] leading-7"
+            >
+              <p>
+                I’m a full‑stack engineer focused on building clean, performant
+                web experiences with a people‑first mindset. Over the past 2.5
+                years, I’ve worked across AEM, React, JavaScript/TypeScript, and
+                Java—shipping reliable UI, composable components, and
+                integrations that scale.
+              </p>
+              <p>
+                I enjoy shaping front‑end systems, streamlining developer
+                workflows, and closing the loop with automation. My approach is
+                pragmatic: accessibility by default, thoughtful interactions,
+                and simple solutions that are easy to maintain.
+              </p>
+              <p>
+                Recently, I’ve contributed to AEM component libraries, React
+                feature work, and automation that improves CI signal and
+                developer velocity. I’m always learning and I care about
+                details—from empty states to error paths.
+              </p>
+            </div>
+            <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-1">
+              <li>• Strengths: AEM, React, JS/TS, Java, Groovy, HTML/CSS</li>
+              <li>• Also: accessibility, performance, REST APIs, automation</li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+              >
+                Let’s Talk ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section
+        id="projects"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
+        <h2 class="text-lg font-semibold">Projects</h2>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <article
+            id="proj-1"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700"
+          >
+            <div class="h-36 bg-slate-200 dark:bg-slate-700"></div>
+            <div class="p-3">
+              <h3 class="text-sm font-semibold">Case Study A</h3>
+              <p class="text-xs text-slate-500">UX/UI • 2024</p>
+            </div>
+          </article>
+          <article
+            id="proj-2"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700"
+          >
+            <div class="h-36 bg-emerald-200 dark:bg-emerald-900/40"></div>
+            <div class="p-3">
+              <h3 class="text-sm font-semibold">Case Study B</h3>
+              <p class="text-xs text-slate-500">UX/UI • 2024</p>
+            </div>
+          </article>
+          <article
+            id="proj-3"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700"
+          >
+            <div class="h-36 bg-rose-200 dark:bg-rose-900/40"></div>
+            <div class="p-3">
+              <h3 class="text-sm font-semibold">Brand/Visual</h3>
+              <p class="text-xs text-slate-500">Visual • 2023</p>
+            </div>
+          </article>
+          <article
+            id="proj-4"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700"
+          >
+            <div class="h-36 bg-purple-200 dark:bg-purple-900/40"></div>
+            <div class="p-3">
+              <h3 class="text-sm font-semibold">Various Works</h3>
+              <p class="text-xs text-slate-500">Brand/Visual • 2022–2024</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section
+        id="skills"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
+        <h2 class="text-lg font-semibold">Skills</h2>
+        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Core stack and tools I use most:
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200"
+            >AEM</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200"
+            >React</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200"
+            >JavaScript</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-200"
+            >Java</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"
+            >HTML</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200"
+            >CSS</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-200"
+            >Groovy</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200"
+            >Automation</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200"
+            >TypeScript</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-200"
+            >REST APIs</span
+          >
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
+        <h2 class="text-lg font-semibold">Contact</h2>
+        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Open to opportunities and collaborations.
+        </p>
+        <div class="mt-4 grid grid-cols-1 gap-3">
+          <a
+            href="mailto:you@example.com"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">Email</span
+            ><span class="text-xs text-slate-500">you@example.com</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/your-handle"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">LinkedIn</span
+            ><span class="text-xs text-slate-500">/in/your-handle</span>
+          </a>
+          <a
+            href="https://github.com/your-handle"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">GitHub</span
+            ><span class="text-xs text-slate-500">@your-handle</span>
+          </a>
+        </div>
+      </section>
+
+      <footer
+        class="mt-8 text-center text-[11px] text-slate-500 dark:text-slate-400"
+      >
+        © <span id="year"></span> Ramanpreet Singh. Built mobile‑first with
+        Tailwind.
+      </footer>
+    </main>
+
+    <!-- Behavior: dark mode + utilities -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/ui.js"></script>
+  </body>
+</html>
