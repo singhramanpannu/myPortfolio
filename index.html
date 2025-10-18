@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html
+  lang="en"
+  class="scroll-smooth"
+>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Ramanpreet Singh • Portfolio</title>
     <meta
       name="description"
       content="Mobile-first portfolio of a Full-Stack Engineer (AEM, React, JS/TS, Java, HTML, CSS, Groovy, Automation)."
     />
     <!-- Theme color for mobile address bar (light/dark) -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0f172a"
+    />
 
     <!-- 1) Apply saved/system theme ASAP to avoid flash -->
     <script>
       (function () {
         try {
-          var theme = localStorage.getItem("theme");
-          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          if (theme === "dark" || (!theme && prefersDark)) {
-            document.documentElement.classList.add("dark");
+          var theme = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia(
+            '(prefers-color-scheme: dark)'
+          ).matches;
+          if (theme === 'dark' || (!theme && prefersDark)) {
+            document.documentElement.classList.add('dark');
           } else {
-            document.documentElement.classList.remove("dark");
+            document.documentElement.classList.remove('dark');
           }
         } catch (e) {}
       })();
@@ -32,7 +48,7 @@
       // Minimal Tailwind config for CDN - class-based dark mode
       window.tailwind = window.tailwind || {};
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {},
         },
@@ -47,8 +63,8 @@
       }
       /* smoother theme transition */
       .theme-transition {
-        transition: background-color .24s cubic-bezier(.2,.9,.2,1), color .18s linear,
-          border-color .18s linear;
+        transition: background-color 0.24s cubic-bezier(0.2, 0.9, 0.2, 1),
+          color 0.18s linear, border-color 0.18s linear;
       }
       @media (prefers-reduced-motion: reduce) {
         .theme-transition {
@@ -60,7 +76,7 @@
       }
       /* focus-visible fallback for non-tailwind browsers */
       :where(button, a):focus-visible {
-        outline: 3px solid rgba(99,102,241,0.18);
+        outline: 3px solid rgba(99, 102, 241, 0.18);
         outline-offset: 2px;
         border-radius: 8px;
       }
@@ -74,12 +90,21 @@
         border-radius: 1rem;
       }
       /* clipboard safe tap highlight removal */
-      a, button { -webkit-tap-highlight-color: transparent; }
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
       /* prevent horizontal overflow from page-level transformations */
-      html, body { overflow-x: clip; }
+      html,
+      body {
+        overflow-x: clip;
+      }
     </style>
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/css/styles.css"
+    />
   </head>
 
   <body
@@ -95,12 +120,24 @@
     <header
       class="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70 border-b border-slate-200/80 dark:border-slate-700/80"
     >
-      <div class="mx-auto max-w-screen-md px-4 py-3 flex items-center justify-between">
-        <a href="#about" class="font-semibold tracking-tight text-base">Ramanpreet Singh</a>
+      <div
+        class="mx-auto max-w-screen-md px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="#about"
+          class="font-semibold tracking-tight text-base"
+          >Ramanpreet Singh</a
+        >
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-2" aria-label="Primary">
-          <div class="relative" id="projects-dropdown">
+        <nav
+          class="hidden md:flex items-center gap-2"
+          aria-label="Primary"
+        >
+          <div
+            class="relative"
+            id="projects-dropdown"
+          >
             <button
               id="projects-trigger"
               type="button"
@@ -118,8 +155,13 @@
             >
               <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <li>
-                  <a href="#proj-1" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <div class="w-16 h-12 rounded-lg bg-slate-200 dark:bg-slate-700"></div>
+                  <a
+                    href="#proj-1"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-slate-200 dark:bg-slate-700"
+                    ></div>
                     <div>
                       <div class="text-sm font-medium">Case Study A</div>
                       <div class="text-xs text-slate-500">UX/UI</div>
@@ -127,8 +169,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#proj-2" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <div class="w-16 h-12 rounded-lg bg-emerald-200 dark:bg-emerald-900/40"></div>
+                  <a
+                    href="#proj-2"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-emerald-200 dark:bg-emerald-900/40"
+                    ></div>
                     <div>
                       <div class="text-sm font-medium">Case Study B</div>
                       <div class="text-xs text-slate-500">UX/UI</div>
@@ -136,8 +183,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#proj-3" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <div class="w-16 h-12 rounded-lg bg-rose-200 dark:bg-rose-900/40"></div>
+                  <a
+                    href="#proj-3"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-rose-200 dark:bg-rose-900/40"
+                    ></div>
                     <div>
                       <div class="text-sm font-medium">Brand/Visual</div>
                       <div class="text-xs text-slate-500">Visual</div>
@@ -145,8 +197,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#proj-4" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <div class="w-16 h-12 rounded-lg bg-purple-200 dark:bg-purple-900/40"></div>
+                  <a
+                    href="#proj-4"
+                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <div
+                      class="w-16 h-12 rounded-lg bg-purple-200 dark:bg-purple-900/40"
+                    ></div>
                     <div>
                       <div class="text-sm font-medium">Various Works</div>
                       <div class="text-xs text-slate-500">Brand/Visual</div>
@@ -157,9 +214,24 @@
             </div>
           </div>
 
-          <a href="#about" data-nav="about" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
-          <a href="#skills" data-nav="skills" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
-          <a href="#contact" data-nav="contact" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Let's Talk ↗</a>
+          <a
+            href="#about"
+            data-nav="about"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >About</a
+          >
+          <a
+            href="#skills"
+            data-nav="skills"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            data-nav="contact"
+            class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Let's Talk ↗</a
+          >
 
           <!-- Desktop theme toggle (class based) -->
           <button
@@ -168,8 +240,16 @@
             aria-pressed="false"
             type="button"
           >
-            <span class="icon-sun hidden" aria-hidden="true">☀️</span>
-            <span class="icon-moon" aria-hidden="true">🌙</span>
+            <span
+              class="icon-sun hidden"
+              aria-hidden="true"
+              >☀️</span
+            >
+            <span
+              class="icon-moon"
+              aria-hidden="true"
+              >🌙</span
+            >
             <span class="sr-only">Toggle theme</span>
           </button>
         </nav>
@@ -183,8 +263,16 @@
             aria-pressed="false"
             type="button"
           >
-            <span class="icon-sun hidden" aria-hidden="true">☀️</span>
-            <span class="icon-moon" aria-hidden="true">🌙</span>
+            <span
+              class="icon-sun hidden"
+              aria-hidden="true"
+              >☀️</span
+            >
+            <span
+              class="icon-moon"
+              aria-hidden="true"
+              >🌙</span
+            >
             <span class="sr-only">Toggle theme</span>
           </button>
 
@@ -202,30 +290,57 @@
       </div>
 
       <!-- Mobile menu panel -->
-      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
+      >
         <div class="px-4 py-3 space-y-2">
-          <details id="mobile-projects" class="group">
-            <summary class="cursor-pointer px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium flex items-center justify-between">
+          <details
+            id="mobile-projects"
+            class="group"
+          >
+            <summary
+              class="cursor-pointer px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium flex items-center justify-between"
+            >
               <span>Projects</span>
-              <span aria-hidden="true" class="transition-transform group-open:rotate-180">▾</span>
+              <span
+                aria-hidden="true"
+                class="transition-transform group-open:rotate-180"
+                >▾</span
+              >
             </summary>
             <div class="mt-2 grid grid-cols-1 gap-2">
-              <a href="#proj-1" class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                <div class="w-14 h-10 rounded bg-slate-200 dark:bg-slate-700"></div>
+              <a
+                href="#proj-1"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-slate-200 dark:bg-slate-700"
+                ></div>
                 <div>
                   <div class="text-sm font-medium">Case Study A</div>
                   <div class="text-xs text-slate-500">UX/UI</div>
                 </div>
               </a>
-              <a href="#proj-2" class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                <div class="w-14 h-10 rounded bg-emerald-200 dark:bg-emerald-900/40"></div>
+              <a
+                href="#proj-2"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-emerald-200 dark:bg-emerald-900/40"
+                ></div>
                 <div>
                   <div class="text-sm font-medium">Case Study B</div>
                   <div class="text-xs text-slate-500">UX/UI</div>
                 </div>
               </a>
-              <a href="#proj-3" class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                <div class="w-14 h-10 rounded bg-rose-200 dark:bg-rose-900/40"></div>
+              <a
+                href="#proj-3"
+                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
+              >
+                <div
+                  class="w-14 h-10 rounded bg-rose-200 dark:bg-rose-900/40"
+                ></div>
                 <div>
                   <div class="text-sm font-medium">Brand/Visual</div>
                   <div class="text-xs text-slate-500">Visual</div>
@@ -234,11 +349,32 @@
             </div>
           </details>
 
-          <a href="#about" data-nav="about" class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium">About</a>
-          <a href="#skills" data-nav="skills" class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium">Skills</a>
-          <a href="#contact" data-nav="contact" class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium">Let's Talk ↗</a>
+          <a
+            href="#about"
+            data-nav="about"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >About</a
+          >
+          <a
+            href="#skills"
+            data-nav="skills"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            data-nav="contact"
+            class="block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
+            >Let's Talk ↗</a
+          >
 
-          <button id="mobile-menu-close" type="button" class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm">Close</button>
+          <button
+            id="mobile-menu-close"
+            type="button"
+            class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm"
+          >
+            Close
+          </button>
         </div>
       </div>
     </header>
@@ -246,10 +382,17 @@
     <!-- Main -->
     <main class="mx-auto max-w-screen-lg px-4 pb-16 pt-6">
       <!-- Hero / Intro -->
-      <section id="about" class="theme-transition rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 md:p-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start">
+      <section
+        id="about"
+        class="theme-transition rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 md:p-8"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start"
+        >
           <figure class="md:col-span-5 order-2 md:order-1">
-            <div class="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-200 dark:bg-slate-700">
+            <div
+              class="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-200 dark:bg-slate-700"
+            >
               <!-- Replace with your photo - use responsive srcset for best results -->
               <img
                 src="./assets/images/portrait-placeholder.jpg"
@@ -261,20 +404,36 @@
                 onerror="this.style.display='none'"
               />
             </div>
-            <figcaption class="mt-2 text-[11px] text-slate-500">Photo placeholder — replace with your image</figcaption>
+            <figcaption class="mt-2 text-[11px] text-slate-500">
+              Photo placeholder — replace with your image
+            </figcaption>
           </figure>
 
           <div class="md:col-span-7 space-y-4 order-1 md:order-2">
-            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">About Me</h1>
-            <div class="prose prose-slate dark:prose-invert max-w-none text-[15px] leading-7">
+            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              About Me
+            </h1>
+            <div
+              class="prose prose-slate dark:prose-invert max-w-none text-[15px] leading-7"
+            >
               <p>
-                I’m a full-stack engineer focused on building clean, performant web experiences with a people-first mindset. Over the past 2.5 years, I’ve worked across AEM, React, JavaScript/TypeScript, and Java—shipping reliable UI, composable components, and integrations that scale.
+                I’m a full-stack engineer focused on building clean, performant
+                web experiences with a people-first mindset. Over the past 2.5
+                years, I’ve worked across AEM, React, JavaScript/TypeScript, and
+                Java—shipping reliable UI, composable components, and
+                integrations that scale.
               </p>
               <p>
-                I enjoy shaping front-end systems, streamlining developer workflows, and closing the loop with automation. My approach is pragmatic: accessibility by default, thoughtful interactions, and simple solutions that are easy to maintain.
+                I enjoy shaping front-end systems, streamlining developer
+                workflows, and closing the loop with automation. My approach is
+                pragmatic: accessibility by default, thoughtful interactions,
+                and simple solutions that are easy to maintain.
               </p>
               <p>
-                Recently, I’ve contributed to AEM component libraries, React feature work, and automation that improves CI signal and developer velocity. I’m always learning and I care about details—from empty states to error paths.
+                Recently, I’ve contributed to AEM component libraries, React
+                feature work, and automation that improves CI signal and
+                developer velocity. I’m always learning and I care about
+                details—from empty states to error paths.
               </p>
             </div>
             <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-1">
@@ -282,17 +441,27 @@
               <li>• Also: accessibility, performance, REST APIs, automation</li>
             </ul>
             <div class="pt-2">
-              <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Let’s Talk ↗</a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+                >Let’s Talk ↗</a
+              >
             </div>
           </div>
         </div>
       </section>
 
       <!-- Projects -->
-      <section id="projects" class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5">
+      <section
+        id="projects"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
         <h2 class="text-lg font-semibold">Projects</h2>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <article id="proj-1" class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover">
+          <article
+            id="proj-1"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
+          >
             <div class="h-36 bg-slate-200 dark:bg-slate-700"></div>
             <div class="p-3">
               <h3 class="text-sm font-semibold">Case Study A</h3>
@@ -300,7 +469,10 @@
             </div>
           </article>
 
-          <article id="proj-2" class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover">
+          <article
+            id="proj-2"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
+          >
             <div class="h-36 bg-emerald-200 dark:bg-emerald-900/40"></div>
             <div class="p-3">
               <h3 class="text-sm font-semibold">Case Study B</h3>
@@ -308,7 +480,10 @@
             </div>
           </article>
 
-          <article id="proj-3" class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover">
+          <article
+            id="proj-3"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
+          >
             <div class="h-36 bg-rose-200 dark:bg-rose-900/40"></div>
             <div class="p-3">
               <h3 class="text-sm font-semibold">Brand/Visual</h3>
@@ -316,7 +491,10 @@
             </div>
           </article>
 
-          <article id="proj-4" class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover">
+          <article
+            id="proj-4"
+            class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
+          >
             <div class="h-36 bg-purple-200 dark:bg-purple-900/40"></div>
             <div class="p-3">
               <h3 class="text-sm font-semibold">Various Works</h3>
@@ -327,42 +505,101 @@
       </section>
 
       <!-- Skills -->
-      <section id="skills" class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5">
+      <section
+        id="skills"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
         <h2 class="text-lg font-semibold">Skills</h2>
-        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Core stack and tools I use most:</p>
+        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Core stack and tools I use most:
+        </p>
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200">AEM</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200">React</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200">JavaScript</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-200">Java</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">HTML</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200">CSS</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-200">Groovy</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200">Automation</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200">TypeScript</span>
-          <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-200">REST APIs</span>
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200"
+            >AEM</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200"
+            >React</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200"
+            >JavaScript</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-200"
+            >Java</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"
+            >HTML</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200"
+            >CSS</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-200"
+            >Groovy</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200"
+            >Automation</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200"
+            >TypeScript</span
+          >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-200"
+            >REST APIs</span
+          >
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5">
+      <section
+        id="contact"
+        class="mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
+      >
         <h2 class="text-lg font-semibold">Contact</h2>
-        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Open to opportunities and collaborations.</p>
+        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Open to opportunities and collaborations.
+        </p>
         <div class="mt-4 grid grid-cols-1 gap-3">
-          <a href="mailto:you@example.com" class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
-            <span class="text-sm">Email</span><span class="text-xs text-slate-500">you@example.com</span>
+          <a
+            href="mailto:you@example.com"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">Email</span
+            ><span class="text-xs text-slate-500">you@example.com</span>
           </a>
-          <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener" class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
-            <span class="text-sm">LinkedIn</span><span class="text-xs text-slate-500">/in/your-handle</span>
+          <a
+            href="https://www.linkedin.com/in/your-handle"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">LinkedIn</span
+            ><span class="text-xs text-slate-500">/in/your-handle</span>
           </a>
-          <a href="https://github.com/your-handle" target="_blank" rel="noopener" class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
-            <span class="text-sm">GitHub</span><span class="text-xs text-slate-500">@your-handle</span>
+          <a
+            href="https://github.com/your-handle"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span class="text-sm">GitHub</span
+            ><span class="text-xs text-slate-500">@your-handle</span>
           </a>
         </div>
       </section>
 
-      <footer class="mt-8 text-center text-[11px] text-slate-500 dark:text-slate-400">
-        © <span id="year"></span> Ramanpreet Singh. Built mobile-first with Tailwind.
+      <footer
+        class="mt-8 text-center text-[11px] text-slate-500 dark:text-slate-400"
+      >
+        © <span id="year"></span> Ramanpreet Singh. Built mobile-first with
+        Tailwind.
       </footer>
     </main>
 
@@ -370,78 +607,113 @@
     <script>
       (function () {
         // All theme toggle buttons (desktop + mobile)
-        const toggles = Array.from(document.querySelectorAll(".theme-toggle"));
+        const toggles = Array.from(document.querySelectorAll('.theme-toggle'));
+
+        // Track system preference only when no user choice is stored
+        const systemMql = window.matchMedia('(prefers-color-scheme: dark)');
+        let useSystemPreference = false;
+        let systemListener = null;
 
         const updateIcons = () => {
-          const isDark = document.documentElement.classList.contains("dark");
+          const isDark = document.documentElement.classList.contains('dark');
           toggles.forEach((btn) => {
-            btn.setAttribute("aria-pressed", String(isDark));
-            btn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-            const sun = btn.querySelector(".icon-sun");
-            const moon = btn.querySelector(".icon-moon");
+            btn.setAttribute('aria-pressed', String(isDark));
+            btn.setAttribute(
+              'aria-label',
+              isDark ? 'Switch to light mode' : 'Switch to dark mode'
+            );
+            const sun = btn.querySelector('.icon-sun');
+            const moon = btn.querySelector('.icon-moon');
             if (sun && moon) {
-              sun.classList.toggle("hidden", !isDark);
-              moon.classList.toggle("hidden", isDark);
+              sun.classList.toggle('hidden', !isDark);
+              moon.classList.toggle('hidden', isDark);
             }
           });
         };
 
-        const setTheme = (dark) => {
-          document.documentElement.classList.toggle("dark", dark);
-          try {
-            localStorage.setItem("theme", dark ? "dark" : "light");
-          } catch (e) {}
+        const applyTheme = (dark, persist = false) => {
+          document.documentElement.classList.toggle('dark', dark);
+          if (persist) {
+            try {
+              localStorage.setItem('theme', dark ? 'dark' : 'light');
+            } catch (e) {}
+            // Stop following system after explicit user choice
+            useSystemPreference = false;
+            if (systemListener) {
+              try {
+                systemMql.removeEventListener('change', systemListener);
+              } catch (_) {}
+              systemListener = null;
+            }
+          }
           updateIcons();
         };
 
         // Add listeners to all theme toggle buttons
         toggles.forEach((btn) =>
-          btn.addEventListener("click", () => setTheme(!document.documentElement.classList.contains("dark")))
+          btn.addEventListener('click', () => {
+            const next = !document.documentElement.classList.contains('dark');
+            applyTheme(next, true);
+          })
         );
 
         // Initialize based on saved preference or system preference
         try {
-          const stored = localStorage.getItem("theme");
-          if (stored) {
-            setTheme(stored === "dark");
+          const stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') {
+            useSystemPreference = false;
+            applyTheme(stored === 'dark');
           } else {
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            setTheme(prefersDark);
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setTheme(e.matches));
+            useSystemPreference = true;
+            applyTheme(systemMql.matches);
+            systemListener = (e) => {
+              if (useSystemPreference) applyTheme(e.matches);
+            };
+            try {
+              systemMql.addEventListener('change', systemListener);
+            } catch (_) {}
           }
         } catch (e) {
-          // fail silently
+          // If storage fails, follow system
+          useSystemPreference = true;
+          applyTheme(systemMql.matches);
         }
 
         // Year footer
-        const yearEl = document.getElementById("year");
+        const yearEl = document.getElementById('year');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
 
         updateIcons();
 
         // Active link highlighting (scrollspy)
-        const navLinks = Array.from(document.querySelectorAll('nav a[data-nav], #mobile-menu a[data-nav]'));
+        const navLinks = Array.from(
+          document.querySelectorAll('nav a[data-nav], #mobile-menu a[data-nav]')
+        );
 
-        const sections = ["about", "projects", "skills", "contact"]
+        const sections = ['about', 'projects', 'skills', 'contact']
           .map((id) => document.getElementById(id))
           .filter(Boolean);
 
         const observer =
-          "IntersectionObserver" in window
+          'IntersectionObserver' in window
             ? new IntersectionObserver(
                 (entries) => {
                   entries.forEach((entry) => {
                     const id = entry.target.id;
-                    const link = navLinks.find((a) => a.getAttribute("data-nav") === id);
+                    const link = navLinks.find(
+                      (a) => a.getAttribute('data-nav') === id
+                    );
                     if (!link) return;
                     if (entry.isIntersecting) {
-                      navLinks.forEach((a) => a.classList.remove("bg-slate-100", "dark:bg-slate-800"));
-                      link.classList.add("bg-slate-100", "dark:bg-slate-800");
+                      navLinks.forEach((a) =>
+                        a.classList.remove('bg-slate-100', 'dark:bg-slate-800')
+                      );
+                      link.classList.add('bg-slate-100', 'dark:bg-slate-800');
                     }
                   });
                 },
                 {
-                  rootMargin: "-40% 0px -55% 0px",
+                  rootMargin: '-40% 0px -55% 0px',
                   threshold: [0, 0.25, 0.5, 0.75, 1],
                 }
               )
@@ -455,16 +727,16 @@
     <script>
       (function () {
         // Projects dropdown (desktop)
-        const trigger = document.getElementById("projects-trigger");
-        const menu = document.getElementById("projects-menu");
+        const trigger = document.getElementById('projects-trigger');
+        const menu = document.getElementById('projects-menu');
         let open = false;
         const setOpen = (v) => {
           open = v;
           if (!trigger || !menu) return;
-          trigger.setAttribute("aria-expanded", String(v));
-          menu.classList.toggle("hidden", !v);
+          trigger.setAttribute('aria-expanded', String(v));
+          menu.classList.toggle('hidden', !v);
           if (v) {
-            const first = menu.querySelector("a, button, [tabindex]");
+            const first = menu.querySelector('a, button, [tabindex]');
             if (first) first.focus();
           } else {
             trigger.focus();
@@ -472,34 +744,35 @@
         };
 
         if (trigger && menu) {
-          trigger.addEventListener("click", (e) => {
+          trigger.addEventListener('click', (e) => {
             e.stopPropagation();
             setOpen(!open);
           });
 
           // Close if click outside
-          document.addEventListener("click", (e) => {
+          document.addEventListener('click', (e) => {
             if (!open) return;
-            if (!menu.contains(e.target) && e.target !== trigger) setOpen(false);
+            if (!menu.contains(e.target) && e.target !== trigger)
+              setOpen(false);
           });
 
           // Close on Escape
-          document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") setOpen(false);
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setOpen(false);
           });
         }
 
         // Mobile menu
-        const mobileToggle = document.getElementById("mobile-menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const mobileClose = document.getElementById("mobile-menu-close");
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-menu-close');
         const setMobileOpen = (v) => {
           if (!mobileMenu || !mobileToggle) return;
-          mobileMenu.classList.toggle("hidden", !v);
-          mobileToggle.setAttribute("aria-expanded", String(v));
-          document.body.classList.toggle("overflow-hidden", v);
+          mobileMenu.classList.toggle('hidden', !v);
+          mobileToggle.setAttribute('aria-expanded', String(v));
+          document.body.classList.toggle('overflow-hidden', v);
           if (v) {
-            const first = mobileMenu.querySelector("a, button, [tabindex]");
+            const first = mobileMenu.querySelector('a, button, [tabindex]');
             if (first) first.focus();
           } else {
             mobileToggle.focus();
@@ -507,15 +780,21 @@
         };
 
         if (mobileToggle && mobileMenu) {
-          mobileToggle.addEventListener("click", () => setMobileOpen(mobileMenu.classList.contains("hidden")));
+          mobileToggle.addEventListener('click', () =>
+            setMobileOpen(mobileMenu.classList.contains('hidden'))
+          );
         }
         if (mobileClose) {
-          mobileClose.addEventListener("click", () => setMobileOpen(false));
+          mobileClose.addEventListener('click', () => setMobileOpen(false));
         }
 
         // Close on resize to desktop
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 768 && mobileMenu && !mobileMenu.classList.contains("hidden")) {
+        window.addEventListener('resize', () => {
+          if (
+            window.innerWidth >= 768 &&
+            mobileMenu &&
+            !mobileMenu.classList.contains('hidden')
+          ) {
             setMobileOpen(false);
           }
         });
