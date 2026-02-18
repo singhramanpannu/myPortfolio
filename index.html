@@ -1,854 +1,155 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  class="scroll-smooth"
->
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>Ramanpreet Singh • Portfolio</title>
-    <meta
-      name="description"
-      content="Mobile-first portfolio of a Full-Stack Engineer (AEM, React, JS/TS, Java, HTML, CSS, Groovy, Automation)."
-    />
-    <!-- Theme color for mobile address bar (light/dark) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#ffffff"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0f172a"
-    />
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RP Portfolio</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-    <!-- Runtime-updated theme-color (fallback to ensure address bar matches user toggle) -->
-    <meta
-      id="theme-color-runtime"
-      name="theme-color"
-      content="#ffffff"
-    />
+<body>
 
-    <!-- 1) Apply saved/system theme ASAP to avoid flash -->
-    <script>
-      (function () {
-        try {
-          var theme = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia(
-            '(prefers-color-scheme: dark)'
-          ).matches;
-          var isDark = theme === 'dark' || (!theme && prefersDark);
-          if (isDark) document.documentElement.classList.add('dark');
-          else document.documentElement.classList.remove('dark');
-          // Also set a data-theme attribute for CSS-only fallback
-          document.documentElement.setAttribute(
-            'data-theme',
-            isDark ? 'dark' : 'light'
-          );
-          // Update runtime theme-color meta quickly
-          var meta = document.getElementById('theme-color-runtime');
-          if (meta)
-            meta.setAttribute('content', isDark ? '#0f172a' : '#ffffff');
-        } catch (e) {}
-      })();
-    </script>
+<!-- NAVBAR -->
+<nav class="navbar">
 
-    <!-- 2) Tailwind CDN config (class-based dark mode) -->
-    <script>
-      // Minimal Tailwind config for CDN - class-based dark mode
-      window.tailwind = window.tailwind || {};
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {},
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+<div class="nav-left">
+<h2 class="logo">RP</h2>
+</div>
 
-    <!-- Basic styles / small helpers -->
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
-      /* Global theming fallback using data-theme on <html> */
-      html[data-theme='light'] body {
-        background-color: #ffffff;
-        color: #0f172a; /* slate-900 */
-      }
-      html[data-theme='dark'] body {
-        background-color: #0f172a; /* slate-900 */
-        color: #e2e8f0; /* slate-100/200 */
-      }
-      /* Borders and surfaces for key containers (fallback) */
-      html[data-theme='light'] .surface,
-      html[data-theme='light'] .card,
-      html[data-theme='light'] header,
-      html[data-theme='light'] .panel {
-        background-color: #f8fafc; /* slate-50 */
-        border-color: rgba(203, 213, 225, 1); /* slate-200 */
-      }
-      html[data-theme='dark'] .surface,
-      html[data-theme='dark'] .card,
-      html[data-theme='dark'] header,
-      html[data-theme='dark'] .panel {
-        background-color: rgba(30, 41, 59, 0.5); /* slate-800/50 */
-        border-color: rgba(51, 65, 85, 1); /* slate-700 */
-      }
-      /* Selection fallback */
-      html[data-theme='light'] ::selection {
-        background: rgba(99, 102, 241, 0.25);
-      }
-      html[data-theme='dark'] ::selection {
-        background: rgba(67, 56, 202, 0.35);
-      }
-      /* smoother theme transition */
-      .theme-transition {
-        transition: background-color 0.24s cubic-bezier(0.2, 0.9, 0.2, 1),
-          color 0.18s linear, border-color 0.18s linear;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .theme-transition {
-          transition: none !important;
-        }
-        * {
-          scroll-behavior: auto !important;
-        }
-      }
-      /* focus-visible fallback for non-tailwind browsers */
-      :where(button, a):focus-visible {
-        outline: 3px solid rgba(99, 102, 241, 0.18);
-        outline-offset: 2px;
-        border-radius: 8px;
-      }
-      /* small card lift */
-      .card-hover:hover {
-        transform: translateY(-4px);
-        transition: transform 180ms ease;
-      }
-      /* ensure dropdown shadow and rounded */
-      .projects-menu {
-        border-radius: 1rem;
-      }
-      /* clipboard safe tap highlight removal */
-      a,
-      button {
-        -webkit-tap-highlight-color: transparent;
-      }
-      /* prevent horizontal overflow from page-level transformations */
-      html,
-      body {
-        overflow-x: clip;
-      }
-    </style>
+<ul class="nav-center">
+<li><a href="#hero" class="nav-link">Home</a></li>
+<li><a href="#about" class="nav-link">About</a></li>
+<li><a href="#skills" class="nav-link">Skills</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
 
-    <link
-      rel="stylesheet"
-      href="./assets/css/styles.css"
-    />
-  </head>
+<div class="nav-right">
 
-  <body
-    class="theme-transition bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-dvh selection:bg-indigo-200 dark:selection:bg-indigo-700/50"
-  >
-    <a
-      href="#about"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-yellow-300 dark:focus:bg-yellow-500 text-black px-3 py-2 rounded"
-      >Skip to content</a
-    >
+<a href="#contact" class="nav-cta">
+Get In Touch
+<span class="cta-dot"></span>
+</a>
 
-    <!-- Header / Nav -->
-    <header
-      class="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70 border-b border-slate-200/80 dark:border-slate-700/80"
-    >
-      <div
-        class="mx-auto max-w-screen-md px-4 py-3 flex items-center justify-between"
-      >
-        <a
-          href="#about"
-          class="font-semibold tracking-tight text-base"
-          >Ramanpreet Singh</a
-        >
+<div class="theme-switch" id="theme-toggle">
+<div class="switch-circle"></div>
+</div>
 
-        <!-- Desktop nav -->
-        <nav
-          class="hidden md:flex items-center gap-2"
-          aria-label="Primary"
-        >
-          <div
-            class="relative"
-            id="projects-dropdown"
-          >
-            <button
-              id="projects-trigger"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1"
-            >
-              Projects
-              <span aria-hidden="true">▾</span>
-            </button>
+</div>
 
-            <div
-              id="projects-menu"
-              class="hidden absolute left-0 mt-2 w-[min(92vw,26rem)] rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-xl p-3 projects-menu"
-            >
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <li>
-                  <a
-                    href="#proj-1"
-                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
-                  >
-                    <div
-                      class="w-16 h-12 rounded-lg bg-slate-200 dark:bg-slate-700"
-                    ></div>
-                    <div>
-                      <div class="text-sm font-medium">Case Study A</div>
-                      <div class="text-xs text-slate-500">UX/UI</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#proj-2"
-                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
-                  >
-                    <div
-                      class="w-16 h-12 rounded-lg bg-emerald-200 dark:bg-emerald-900/40"
-                    ></div>
-                    <div>
-                      <div class="text-sm font-medium">Case Study B</div>
-                      <div class="text-xs text-slate-500">UX/UI</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#proj-3"
-                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
-                  >
-                    <div
-                      class="w-16 h-12 rounded-lg bg-rose-200 dark:bg-rose-900/40"
-                    ></div>
-                    <div>
-                      <div class="text-sm font-medium">Brand/Visual</div>
-                      <div class="text-xs text-slate-500">Visual</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#proj-4"
-                    class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
-                  >
-                    <div
-                      class="w-16 h-12 rounded-lg bg-purple-200 dark:bg-purple-900/40"
-                    ></div>
-                    <div>
-                      <div class="text-sm font-medium">Various Works</div>
-                      <div class="text-xs text-slate-500">Brand/Visual</div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+</nav>
 
-          <a
-            href="#about"
-            data-nav="about"
-            class="nav-link px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
-            >About</a
-          >
-          <a
-            href="#skills"
-            data-nav="skills"
-            class="nav-link px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
-            >Skills</a
-          >
-          <a
-            href="#contact"
-            data-nav="contact"
-            class="nav-link btn px-3 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
-            >Let's Talk ↗</a
-          >
+<!-- HERO -->
+<section id="hero" class="hero-container reveal">
 
-          <!-- Desktop theme toggle (class based) -->
-          <button
-            class="theme-toggle btn ml-1 p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-            aria-label="Toggle dark mode"
-            aria-pressed="false"
-            type="button"
-          >
-            <span
-              class="icon-sun hidden"
-              aria-hidden="true"
-              >☀️</span
-            >
-            <span
-              class="icon-moon"
-              aria-hidden="true"
-              >🌙</span
-            >
-            <span class="sr-only">Toggle theme</span>
-          </button>
-        </nav>
+<div class="hero-card">
 
-        <!-- Mobile toggles -->
-        <div class="md:hidden flex items-center gap-2">
-          <!-- Mobile theme toggle -->
-          <button
-            class="theme-toggle btn p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-            aria-label="Toggle dark mode"
-            aria-pressed="false"
-            type="button"
-          >
-            <span
-              class="icon-sun hidden"
-              aria-hidden="true"
-              >☀️</span
-            >
-            <span
-              class="icon-moon"
-              aria-hidden="true"
-              >🌙</span
-            >
-            <span class="sr-only">Toggle theme</span>
-          </button>
+<div class="hero-left">
+<h4>Hey, I'm a</h4>
+<h1>Software <br> Developer</h1>
 
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-            class="p-2 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            <span class="sr-only">Open menu</span>
-            <span aria-hidden="true">☰</span>
-          </button>
-        </div>
-      </div>
+<a href="#contact" class="hero-btn">
+Get In Touch
+<span class="dot"></span>
+</a>
+</div>
 
-      <!-- Mobile menu panel -->
-      <div
-        id="mobile-menu"
-        class="surface md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
-      >
-        <div class="px-4 py-3 space-y-2">
-          <details
-            id="mobile-projects"
-            class="group"
-          >
-            <summary
-              class="cursor-pointer px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium flex items-center justify-between"
-            >
-              <span>Projects</span>
-              <span
-                aria-hidden="true"
-                class="transition-transform group-open:rotate-180"
-                >▾</span
-              >
-            </summary>
-            <div class="mt-2 grid grid-cols-1 gap-2">
-              <a
-                href="#proj-1"
-                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="w-14 h-10 rounded bg-slate-200 dark:bg-slate-700"
-                ></div>
-                <div>
-                  <div class="text-sm font-medium">Case Study A</div>
-                  <div class="text-xs text-slate-500">UX/UI</div>
-                </div>
-              </a>
-              <a
-                href="#proj-2"
-                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="w-14 h-10 rounded bg-emerald-200 dark:bg-emerald-900/40"
-                ></div>
-                <div>
-                  <div class="text-sm font-medium">Case Study B</div>
-                  <div class="text-xs text-slate-500">UX/UI</div>
-                </div>
-              </a>
-              <a
-                href="#proj-3"
-                class="flex items-center gap-3 p-2 rounded-xl border border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="w-14 h-10 rounded bg-rose-200 dark:bg-rose-900/40"
-                ></div>
-                <div>
-                  <div class="text-sm font-medium">Brand/Visual</div>
-                  <div class="text-xs text-slate-500">Visual</div>
-                </div>
-              </a>
-            </div>
-          </details>
+<div class="hero-right">
+<h3>Great design should feel invisible.</h3>
+<p>From UI to performance, I build websites that connect and convert.</p>
+</div>
 
-          <a
-            href="#about"
-            data-nav="about"
-            class="nav-link block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
-            >About</a
-          >
-          <a
-            href="#skills"
-            data-nav="skills"
-            class="nav-link block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
-            >Skills</a
-          >
-          <a
-            href="#contact"
-            data-nav="contact"
-            class="nav-link block px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium"
-            >Let's Talk ↗</a
-          >
+<div class="hero-services">
+<div>#01 <span>Frontend Development</span></div>
+<div>#02 <span>Responsive UI</span></div>
+<div>#03 <span>Performance</span></div>
+<div>#04 <span>Clean Code</span></div>
+</div>
 
-          <button
-            id="mobile-menu-close"
-            type="button"
-            class="btn mt-1 w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </header>
+</div>
+</section>
 
-    <!-- Main -->
-    <main class="mx-auto max-w-screen-lg px-4 pb-16 pt-6">
-      <!-- Hero / Intro -->
-      <section
-        id="about"
-        class="surface theme-transition rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 md:p-8"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start"
-        >
-          <figure class="md:col-span-5 order-2 md:order-1">
-            <div
-              class="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-200 dark:bg-slate-700"
-            >
-              <!-- Replace with your photo - use responsive srcset for best results -->
-              <img
-                src="./assets/images/portrait-placeholder.jpg"
-                alt="Ramanpreet Singh portrait"
-                class="h-full w-full object-cover"
-                loading="lazy"
-                width="800"
-                height="1000"
-                onerror="this.style.display='none'"
-              />
-            </div>
-            <figcaption class="mt-2 text-[11px] text-slate-500">
-              Photo placeholder — replace with your image
-            </figcaption>
-          </figure>
+<!-- ABOUT -->
+<section id="about" class="about-section reveal">
 
-          <div class="md:col-span-7 space-y-4 order-1 md:order-2">
-            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
-              About Me
-            </h1>
-            <div
-              class="prose prose-slate dark:prose-invert max-w-none text-[15px] leading-7"
-            >
-              <p>
-                I’m a full-stack engineer focused on building clean, performant
-                web experiences with a people-first mindset. Over the past 2.5
-                years, I’ve worked across AEM, React, JavaScript/TypeScript, and
-                Java—shipping reliable UI, composable components, and
-                integrations that scale.
-              </p>
-              <p>
-                I enjoy shaping front-end systems, streamlining developer
-                workflows, and closing the loop with automation. My approach is
-                pragmatic: accessibility by default, thoughtful interactions,
-                and simple solutions that are easy to maintain.
-              </p>
-              <p>
-                Recently, I’ve contributed to AEM component libraries, React
-                feature work, and automation that improves CI signal and
-                developer velocity. I’m always learning and I care about
-                details—from empty states to error paths.
-              </p>
-            </div>
-            <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-1">
-              <li>• Strengths: AEM, React, JS/TS, Java, Groovy, HTML/CSS</li>
-              <li>• Also: accessibility, performance, REST APIs, automation</li>
-            </ul>
-            <div class="pt-2">
-              <a
-                href="#contact"
-                class="btn inline-flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
-                >Let’s Talk ↗</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
+<h2>About Me</h2>
 
-      <!-- Projects -->
-      <section
-        id="projects"
-        class="surface mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
-      >
-        <h2 class="text-lg font-semibold">Projects</h2>
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <article
-            id="proj-1"
-            class="card rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
-          >
-            <div class="h-36 bg-slate-200 dark:bg-slate-700"></div>
-            <div class="p-3">
-              <h3 class="text-sm font-semibold">Case Study A</h3>
-              <p class="text-xs text-slate-500">UX/UI • 2024</p>
-            </div>
-          </article>
+<p>
+I'm a Software Developer focused on creating clean,
+minimal and performance-driven web experiences.
+I believe that good design is not about decoration —
+it's about clarity, usability and speed.
 
-          <article
-            id="proj-2"
-            class="card rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
-          >
-            <div class="h-36 bg-emerald-200 dark:bg-emerald-900/40"></div>
-            <div class="p-3">
-              <h3 class="text-sm font-semibold">Case Study B</h3>
-              <p class="text-xs text-slate-500">UX/UI • 2024</p>
-            </div>
-          </article>
+My goal is to build digital products that not only
+look visually appealing but also provide seamless
+user interaction and business value.
+</p>
 
-          <article
-            id="proj-3"
-            class="card rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
-          >
-            <div class="h-36 bg-rose-200 dark:bg-rose-900/40"></div>
-            <div class="p-3">
-              <h3 class="text-sm font-semibold">Brand/Visual</h3>
-              <p class="text-xs text-slate-500">Visual • 2023</p>
-            </div>
-          </article>
+</section>
 
-          <article
-            id="proj-4"
-            class="card rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 card-hover"
-          >
-            <div class="h-36 bg-purple-200 dark:bg-purple-900/40"></div>
-            <div class="p-3">
-              <h3 class="text-sm font-semibold">Various Works</h3>
-              <p class="text-xs text-slate-500">Brand/Visual • 2022–2024</p>
-            </div>
-          </article>
-        </div>
-      </section>
+<!-- SKILLS -->
+<section id="skills" class="skills-section reveal">
 
-      <!-- Skills -->
-      <section
-        id="skills"
-        class="surface mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
-      >
-        <h2 class="text-lg font-semibold">Skills</h2>
-        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
-          Core stack and tools I use most:
-        </p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200"
-            >AEM</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200"
-            >React</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200"
-            >JavaScript</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-200"
-            >Java</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"
-            >HTML</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200"
-            >CSS</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-200"
-            >Groovy</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200"
-            >Automation</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200"
-            >TypeScript</span
-          >
-          <span
-            class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-200"
-            >REST APIs</span
-          >
-        </div>
-      </section>
+<div class="skills-card">
 
-      <!-- Contact -->
-      <section
-        id="contact"
-        class="surface mt-6 theme-transition rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-5"
-      >
-        <h2 class="text-lg font-semibold">Contact</h2>
-        <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
-          Open to opportunities and collaborations.
-        </p>
-        <div class="mt-4 grid grid-cols-1 gap-3">
-          <a
-            href="mailto:you@example.com"
-            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            <span class="text-sm">Email</span
-            ><span class="text-xs text-slate-500">you@example.com</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/your-handle"
-            target="_blank"
-            rel="noopener"
-            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            <span class="text-sm">LinkedIn</span
-            ><span class="text-xs text-slate-500">/in/your-handle</span>
-          </a>
-          <a
-            href="https://github.com/your-handle"
-            target="_blank"
-            rel="noopener"
-            class="flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            <span class="text-sm">GitHub</span
-            ><span class="text-xs text-slate-500">@your-handle</span>
-          </a>
-        </div>
-      </section>
+<h2>My Tech Stack</h2>
 
-      <footer
-        class="mt-8 text-center text-[11px] text-slate-500 dark:text-slate-400"
-      >
-        © <span id="year"></span> Ramanpreet Singh. Built mobile-first with
-        Tailwind.
-      </footer>
-    </main>
+<div class="skills-grid">
+<div>HTML</div>
+<div>CSS</div>
+<div>JavaScript</div>
+<div>React</div>
+<div>Next.js</div>
+<div>Tailwind</div>
+<div>Python</div>
+<div>Django</div>
+<div>MySQL</div>
+<div>Git</div>
+<div>Firebase</div>
+<div>Supabase</div>
+</div>
 
-    <!-- Inline main.js (handles toggles, scrollspy, year) -->
-    <script>
-      (function () {
-        // All theme toggle buttons (desktop + mobile)
-        const toggles = Array.from(document.querySelectorAll('.theme-toggle'));
+</div>
 
-        // Track system preference only when no user choice is stored
-        const systemMql = window.matchMedia('(prefers-color-scheme: dark)');
-        let useSystemPreference = false;
-        let systemListener = null;
+</section>
 
-        const updateIcons = () => {
-          const isDark = document.documentElement.classList.contains('dark');
-          toggles.forEach((btn) => {
-            btn.setAttribute('aria-pressed', String(isDark));
-            btn.setAttribute(
-              'aria-label',
-              isDark ? 'Switch to light mode' : 'Switch to dark mode'
-            );
-            const sun = btn.querySelector('.icon-sun');
-            const moon = btn.querySelector('.icon-moon');
-            if (sun && moon) {
-              sun.classList.toggle('hidden', !isDark);
-              moon.classList.toggle('hidden', isDark);
-            }
-          });
-        };
+<!-- CONTACT -->
+<section id="contact" class="contact-section reveal">
 
-        const applyTheme = (dark, persist = false) => {
-          document.documentElement.classList.toggle('dark', dark);
-          // Global, Tailwind-independent theming hooks
-          document.documentElement.setAttribute(
-            'data-theme',
-            dark ? 'dark' : 'light'
-          );
-          const meta = document.getElementById('theme-color-runtime');
-          if (meta) meta.setAttribute('content', dark ? '#0f172a' : '#ffffff');
-          if (persist) {
-            try {
-              localStorage.setItem('theme', dark ? 'dark' : 'light');
-            } catch (e) {}
-            // Stop following system after explicit user choice
-            useSystemPreference = false;
-            if (systemListener) {
-              try {
-                systemMql.removeEventListener('change', systemListener);
-              } catch (_) {}
-              systemListener = null;
-            }
-          }
-          updateIcons();
-        };
+<div class="contact-card">
 
-        // Add listeners to all theme toggle buttons
-        toggles.forEach((btn) =>
-          btn.addEventListener('click', () => {
-            const next = !document.documentElement.classList.contains('dark');
-            applyTheme(next, true);
-          })
-        );
+<h2>Let's Work Together</h2>
 
-        // Initialize based on saved preference or system preference
-        try {
-          const stored = localStorage.getItem('theme');
-          if (stored === 'dark' || stored === 'light') {
-            useSystemPreference = false;
-            applyTheme(stored === 'dark');
-          } else {
-            useSystemPreference = true;
-            applyTheme(systemMql.matches);
-            systemListener = (e) => {
-              if (useSystemPreference) applyTheme(e.matches);
-            };
-            try {
-              systemMql.addEventListener('change', systemListener);
-            } catch (_) {}
-          }
-        } catch (e) {
-          // If storage fails, follow system
-          useSystemPreference = true;
-          applyTheme(systemMql.matches);
-        }
+<form id="contact-form">
 
-        // Year footer
-        const yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
+<div class="input-group">
+<input type="text" required>
+<label>Name</label>
+</div>
 
-        updateIcons();
+<div class="input-group">
+<input type="email" required>
+<label>Email</label>
+</div>
 
-        // Active link highlighting (scrollspy)
-        const navLinks = Array.from(
-          document.querySelectorAll('nav a[data-nav], #mobile-menu a[data-nav]')
-        );
+<div class="input-group">
+<textarea required></textarea>
+<label>Message</label>
+</div>
 
-        const sections = ['about', 'projects', 'skills', 'contact']
-          .map((id) => document.getElementById(id))
-          .filter(Boolean);
+<button type="submit">Send Message</button>
 
-        const observer =
-          'IntersectionObserver' in window
-            ? new IntersectionObserver(
-                (entries) => {
-                  entries.forEach((entry) => {
-                    const id = entry.target.id;
-                    const link = navLinks.find(
-                      (a) => a.getAttribute('data-nav') === id
-                    );
-                    if (!link) return;
-                    if (entry.isIntersecting) {
-                      navLinks.forEach((a) => a.classList.remove('is-active'));
-                      link.classList.add('is-active');
-                    }
-                  });
-                },
-                {
-                  rootMargin: '-40% 0px -55% 0px',
-                  threshold: [0, 0.25, 0.5, 0.75, 1],
-                }
-              )
-            : null;
+</form>
 
-        if (observer) sections.forEach((sec) => observer.observe(sec));
-      })();
-    </script>
+</div>
 
-    <!-- Inline ui.js (projects dropdown, mobile menu) -->
-    <script>
-      (function () {
-        // Projects dropdown (desktop)
-        const trigger = document.getElementById('projects-trigger');
-        const menu = document.getElementById('projects-menu');
-        let open = false;
-        const setOpen = (v) => {
-          open = v;
-          if (!trigger || !menu) return;
-          trigger.setAttribute('aria-expanded', String(v));
-          menu.classList.toggle('hidden', !v);
-          if (v) {
-            const first = menu.querySelector('a, button, [tabindex]');
-            if (first) first.focus();
-          } else {
-            trigger.focus();
-          }
-        };
+</section>
 
-        if (trigger && menu) {
-          trigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            setOpen(!open);
-          });
+<!-- FOOTER -->
+<footer class="footer">
+<p>© 2026 Ramanpreet Singh</p>
+</footer>
 
-          // Close if click outside
-          document.addEventListener('click', (e) => {
-            if (!open) return;
-            if (!menu.contains(e.target) && e.target !== trigger)
-              setOpen(false);
-          });
+<script src="assets/js/script.js"></script>
 
-          // Close on Escape
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') setOpen(false);
-          });
-        }
-
-        // Mobile menu
-        const mobileToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileClose = document.getElementById('mobile-menu-close');
-        const setMobileOpen = (v) => {
-          if (!mobileMenu || !mobileToggle) return;
-          mobileMenu.classList.toggle('hidden', !v);
-          mobileToggle.setAttribute('aria-expanded', String(v));
-          document.body.classList.toggle('overflow-hidden', v);
-          if (v) {
-            const first = mobileMenu.querySelector('a, button, [tabindex]');
-            if (first) first.focus();
-          } else {
-            mobileToggle.focus();
-          }
-        };
-
-        if (mobileToggle && mobileMenu) {
-          mobileToggle.addEventListener('click', () =>
-            setMobileOpen(mobileMenu.classList.contains('hidden'))
-          );
-        }
-        if (mobileClose) {
-          mobileClose.addEventListener('click', () => setMobileOpen(false));
-        }
-
-        // Close on resize to desktop
-        window.addEventListener('resize', () => {
-          if (
-            window.innerWidth >= 768 &&
-            mobileMenu &&
-            !mobileMenu.classList.contains('hidden')
-          ) {
-            setMobileOpen(false);
-          }
-        });
-      })();
-    </script>
-  </body>
+</body>
 </html>
